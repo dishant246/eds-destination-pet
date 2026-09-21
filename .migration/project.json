@@ -9,5 +9,8 @@
       "aemSiteName": "eds-destination-pet",
       "aemSiteTitle": "eds-destination-pet"
     }
-  }
+  },
+  "features": [
+    "site-planning"
+  ]
 }

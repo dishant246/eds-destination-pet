@@ -1,0 +1,94 @@
+{
+  "templates": [
+    {
+      "name": "hero-feature-landing",
+      "urls": [
+        "https://www.destinationpet.com/",
+        "https://www.destinationpet.com/about-us/about/",
+        "https://www.destinationpet.com/about-us/get-in-touch/",
+        "https://www.destinationpet.com/about-us/meet-the-team/business-development-leaders/",
+        "https://www.destinationpet.com/about-us/meet-the-team/leadership/",
+        "https://www.destinationpet.com/join-our-pack/find-a-veterinary-externship/",
+        "https://www.destinationpet.com/join-our-pack/life-at-dp/",
+        "https://www.destinationpet.com/live-webinar/",
+        "https://www.destinationpet.com/live-webinar/webinar-redirect/",
+        "https://www.destinationpet.com/live-webinar/webinar-registration/",
+        "https://www.destinationpet.com/live-webinar/webinar-viewing-previous/",
+        "https://www.destinationpet.com/live-webinar/webinars-for-pet/",
+        "https://www.destinationpet.com/our-locations/",
+        "https://www.destinationpet.com/sell-your-business/",
+        "https://www.destinationpet.com/sell-your-business/sell-your-pet-resort/",
+        "https://www.destinationpet.com/sell-your-business/sell-your-veterinary-practice/"
+      ],
+      "coverageGaps": [],
+      "description": "Rich landing page: hero banner, media-info split section, multi-column feature grids, and testimonial cards",
+      "blocks": []
+    },
+    {
+      "name": "simple-content",
+      "urls": [
+        "https://www.destinationpet.com/about-us/"
+      ],
+      "coverageGaps": [],
+      "description": "Minimal page with two stacked default-content sections and no blocks",
+      "blocks": []
+    },
+    {
+      "name": "text-content",
+      "urls": [
+        "https://www.destinationpet.com/about-us/ccpa-request/",
+        "https://www.destinationpet.com/about-us/tradeshows-events/",
+        "https://www.destinationpet.com/privacy-policy/",
+        "https://www.destinationpet.com/terms-and-conditions/"
+      ],
+      "coverageGaps": [],
+      "description": "Long-form text page with stacked default-content sections, first section has a background color",
+      "blocks": []
+    },
+    {
+      "name": "hero-media-feature",
+      "urls": [
+        "https://www.destinationpet.com/about-us/destination-pet-foundation/"
+      ],
+      "coverageGaps": [],
+      "description": "Landing variant with hero, media-info split, and 2-column plus 3-column feature sections",
+      "blocks": []
+    },
+    {
+      "name": "stacked-content",
+      "urls": [
+        "https://www.destinationpet.com/about-us/meet-the-team/"
+      ],
+      "coverageGaps": [],
+      "description": "Two default-content sections stacked vertically without blocks",
+      "blocks": []
+    },
+    {
+      "name": "html-sitemap",
+      "urls": [
+        "https://www.destinationpet.com/html-sitemap/"
+      ],
+      "coverageGaps": [],
+      "description": "Sitemap listing page built around an html-sitemap block with supporting text sections",
+      "blocks": []
+    },
+    {
+      "name": "intro-content",
+      "urls": [
+        "https://www.destinationpet.com/join-our-pack/"
+      ],
+      "coverageGaps": [],
+      "description": "Introductory page with two default-content sections and no blocks",
+      "blocks": []
+    },
+    {
+      "name": "location-finder",
+      "urls": [
+        "https://www.destinationpet.com/our-locations/location/"
+      ],
+      "coverageGaps": [],
+      "description": "Location page featuring a center-locator block in a 2x2 layout with supporting content sections",
+      "blocks": []
+    }
+  ]
+}
