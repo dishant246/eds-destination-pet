@@ -1,0 +1,28 @@
+{
+  "variantName": "form",
+  "baseBlock": "form",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + description + location search input + map-view toggle beside a map region"
+  },
+  "contentPattern": "Two-column store locator: an intro/search panel (heading, description, location search, map/satellite toggle) beside an interactive map region",
+  "options": [],
+  "memberVariantIds": [
+    "v_dc8efe61c2e6"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.destinationpet.com/our-locations/location/",
+        "instanceId": "3576c749",
+        "screenshot": ".pages/www_destinationpet_com_our-locations_location--61b83a4f/blocks/3576c749.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

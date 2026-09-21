@@ -1,0 +1,33 @@
+/*
+ * brand.css — Design tokens extracted from https://www.destinationpet.com
+ * Font: Work Sans (Google Fonts). Brand orange #e87722, text #363636.
+ */
+
+:root {
+  /* fonts */
+  --heading-font-family: 'Work Sans', arial, sans-serif;
+  --body-font-family: 'Work Sans', arial, sans-serif;
+
+  /* colors */
+  --background-color: #fff;
+  --text-color: #363636;
+  --link-color: #e87722;
+  --link-hover-color: #0056b3;
+
+  /* brand palette */
+  --brand-orange: #e87722;
+  --brand-orange-hover: #c9601a;
+  --section-grey: #f2f0eb;
+
+  /* spacing */
+  --content-max-width: 1280px;
+  --nav-height: 80px;
+
+  /* heading sizes (desktop) */
+  --heading-size-xxl: 48px;
+  --heading-size-xl: 32px;
+  --heading-size-l: 24px;
+  --heading-size-m: 20px;
+  --heading-size-s: 18px;
+  --heading-size-xs: 16px;
+}

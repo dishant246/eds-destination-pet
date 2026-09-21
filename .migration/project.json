@@ -1,4 +1,5 @@
 {
+  "type": "xwalk",
   "sites": {
     "eds-destination-pet": {
       "previewOrg": "dishant246",
@@ -7,7 +8,8 @@
       "aemSitePath": "/content/eds-destination-pet",
       "aemAssetsFolderPath": "/content/dam/eds-destination-pet",
       "aemSiteName": "eds-destination-pet",
-      "aemSiteTitle": "eds-destination-pet"
+      "aemSiteTitle": "eds-destination-pet",
+      "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json"
     }
   },
   "features": [

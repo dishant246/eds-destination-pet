@@ -1,0 +1,83 @@
+/*
+ * Columns Media block — visual design migrated from
+ * https://www.destinationpet.com (.mediainfo "Who We Are" section).
+ * Values extracted from source computed styles.
+ *
+ * Mobile: stacked (image first). Desktop (900px+): side-by-side two columns.
+ */
+
+.columns-media > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* image column */
+.columns-media > div > .columns-media-img-col {
+  order: 0;
+  width: 100%;
+}
+
+.columns-media > div > .columns-media-img-col img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: fill;
+}
+
+/* text column */
+.columns-media > div > div {
+  order: 1;
+  width: 100%;
+}
+
+/* eyebrow heading */
+.columns-media h2 {
+  margin: 0 0 5px;
+  color: var(--brand-orange);
+  font-family: var(--heading-font-family);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* subheading */
+.columns-media h3 {
+  margin: 0 0 5px;
+  color: var(--brand-orange);
+  font-family: var(--heading-font-family);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+/* body copy — source renders at weight 400 even though authored as <strong> */
+.columns-media p {
+  margin: 0 0 10px;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.columns-media p strong {
+  font-weight: 400;
+}
+
+@media (width >= 900px) {
+  .columns-media > div {
+    flex-direction: row;
+    gap: 130px;
+    padding: 80px 0;
+  }
+
+  .columns-media > div > .columns-media-img-col,
+  .columns-media > div > div {
+    order: unset;
+    flex: 1;
+    width: auto;
+  }
+}

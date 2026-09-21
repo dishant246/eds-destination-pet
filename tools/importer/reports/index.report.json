@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.destinationpet.com/",
+  "path": "index",
+  "timestamp": "2026-09-21T14:45:16.162Z",
+  "title": "Home - Pet Care Network | Destination Pet",
+  "template": "hero-feature-landing",
+  "blocks": [
+    "hero-overlay",
+    "columns-media",
+    "cards-feature",
+    "columns-callout"
+  ]
+}

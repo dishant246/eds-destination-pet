@@ -1,0 +1,26 @@
+{
+  "variantName": "cards-feature",
+  "baseBlock": "cards",
+  "canonicalModel": "collection",
+  "visualCharacteristics": {
+    "colorScheme": "on-grey",
+    "density": "moderate",
+    "hasBackgroundImage": false,
+    "hasGrid": true,
+    "structure": "three centered icon-badge feature cards (icon + title + bold subheading + short paragraph), borderless"
+  },
+  "contentPattern": "Value-proposition feature grid: repeating centered items each with an illustrated icon, a title, and a short paragraph",
+  "options": [],
+  "memberVariantIds": [
+    "cards-feature"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.destinationpet.com/",
+        "instanceId": "cards-feature-1"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

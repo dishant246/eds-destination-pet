@@ -1,0 +1,30 @@
+{
+  "variantName": "hero-overlay",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light-on-image",
+    "density": "minimal",
+    "hasBackgroundImage": true,
+    "structure": "full-bleed background photograph with centered heading overlay, no CTA or subheading"
+  },
+  "contentPattern": "Full-width hero banner: background photograph with a large centered heading overlaid on top",
+  "options": [],
+  "memberVariantIds": [
+    "hero-overlay"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.destinationpet.com/",
+        "instanceId": "hero-overlay-1"
+      },
+      {
+        "url": "https://www.destinationpet.com/about-us/destination-pet-foundation/",
+        "documentPath": "/about-us/destination-pet-foundation/index"
+      }
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-09-21T14:04:40.885701Z"
+  }
+}

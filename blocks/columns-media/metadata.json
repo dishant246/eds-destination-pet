@@ -1,0 +1,30 @@
+{
+  "variantName": "columns-media",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "moderate",
+    "hasBackgroundImage": false,
+    "structure": "two-column image-left / text-right media split with eyebrow + subheading + paragraph"
+  },
+  "contentPattern": "Two-column media-info split: photograph on one side, eyebrow + subheading + descriptive paragraph on the other",
+  "options": [],
+  "memberVariantIds": [
+    "columns-media"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.destinationpet.com/",
+        "instanceId": "columns-media-1"
+      },
+      {
+        "url": "https://www.destinationpet.com/about-us/destination-pet-foundation/",
+        "documentPath": "/about-us/destination-pet-foundation/index"
+      }
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-09-21T14:04:40.885701Z"
+  }
+}

@@ -22,7 +22,102 @@
       ],
       "coverageGaps": [],
       "description": "Rich landing page: hero banner, media-info split section, multi-column feature grids, and testimonial cards",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "hero-overlay",
+          "instances": [
+            ".hero.teaser"
+          ]
+        },
+        {
+          "name": "columns-media",
+          "instances": [
+            ".mediainfo"
+          ]
+        },
+        {
+          "name": "cards-feature",
+          "instances": [
+            ".columncontainer.background-color--tertiary.spacing__top-bottom--40px:nth-of-type(3)"
+          ]
+        },
+        {
+          "name": "columns-callout",
+          "instances": [
+            ".columncontainer.spacing__top--40px"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "rc1",
+          "name": "hero",
+          "selector": [
+            ".hero.teaser"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-overlay"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc2",
+          "name": "media-info",
+          "selector": [
+            ".mediainfo"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-media"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc3",
+          "name": "feature-grid",
+          "selector": [
+            ".columncontainer.background-color--tertiary.spacing__top-bottom--40px:nth-of-type(3)"
+          ],
+          "style": "grey",
+          "blocks": [
+            "cards-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc4",
+          "name": "sell-callout",
+          "selector": [
+            ".columncontainer.spacing__top--40px"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-callout"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc5",
+          "name": "testimonials",
+          "selector": [
+            ".columncontainer.background-color--tertiary.spacing__top-bottom--40px:nth-of-type(5)"
+          ],
+          "style": "grey",
+          "blocks": [],
+          "defaultContent": []
+        },
+        {
+          "id": "rc6",
+          "name": "secondary-nav",
+          "selector": [
+            "body > div.cmp-container"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        }
+      ]
     },
     {
       "name": "simple-content",
@@ -31,7 +126,33 @@
       ],
       "coverageGaps": [],
       "description": "Minimal page with two stacked default-content sections and no blocks",
-      "blocks": []
+      "blocks": [],
+      "sections": [
+        {
+          "id": "rc1",
+          "name": "content",
+          "selector": [
+            "main > div:first-child",
+            "div.root.responsivegrid"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "h1",
+            "p"
+          ]
+        },
+        {
+          "id": "rc2",
+          "name": "secondary-nav",
+          "selector": [
+            "body > div.cmp-container"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        }
+      ]
     },
     {
       "name": "text-content",
@@ -43,7 +164,44 @@
       ],
       "coverageGaps": [],
       "description": "Long-form text page with stacked default-content sections, first section has a background color",
-      "blocks": []
+      "blocks": [],
+      "sections": [
+        {
+          "id": "rc1",
+          "name": "intro",
+          "selector": [
+            ".columncontainer.background-color--primary.spacing__top-bottom--40px"
+          ],
+          "style": "primary",
+          "blocks": [],
+          "defaultContent": [
+            "h1",
+            "p"
+          ]
+        },
+        {
+          "id": "rc2",
+          "name": "body",
+          "selector": [
+            ".columncontainer.spacing__top-bottom--40px:nth-of-type(2)"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "p"
+          ]
+        },
+        {
+          "id": "rc3",
+          "name": "secondary-nav",
+          "selector": [
+            "body > div.cmp-container"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        }
+      ]
     },
     {
       "name": "hero-media-feature",
@@ -52,7 +210,99 @@
       ],
       "coverageGaps": [],
       "description": "Landing variant with hero, media-info split, and 2-column plus 3-column feature sections",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "hero-overlay",
+          "instances": [
+            ".hero.teaser"
+          ]
+        },
+        {
+          "name": "columns-callout",
+          "instances": [
+            ".columncontainer.spacing__top-bottom--40px:nth-of-type(2)",
+            ".columncontainer.spacing__top--16px.spacing__top-bottom--40px"
+          ]
+        },
+        {
+          "name": "columns-media",
+          "instances": [
+            ".mediainfo"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "rc1",
+          "name": "hero",
+          "selector": [
+            ".hero.teaser"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-overlay"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc2",
+          "name": "mission",
+          "selector": [
+            ".columncontainer.spacing__top-bottom--40px:nth-of-type(2)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-callout"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc3",
+          "name": "about-image",
+          "selector": [
+            ".image.image__center"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".image.image__center"
+          ]
+        },
+        {
+          "id": "rc4",
+          "name": "our-impact",
+          "selector": [
+            ".mediainfo"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-media"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc5",
+          "name": "donate-callout",
+          "selector": [
+            ".columncontainer.spacing__top--16px.spacing__top-bottom--40px"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-callout"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc6",
+          "name": "secondary-nav",
+          "selector": [
+            "body > div.cmp-container"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        }
+      ]
     },
     {
       "name": "stacked-content",
@@ -61,7 +311,33 @@
       ],
       "coverageGaps": [],
       "description": "Two default-content sections stacked vertically without blocks",
-      "blocks": []
+      "blocks": [],
+      "sections": [
+        {
+          "id": "rc1",
+          "name": "content",
+          "selector": [
+            "main > div:first-child",
+            "div.root.responsivegrid"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "h1",
+            "p"
+          ]
+        },
+        {
+          "id": "rc2",
+          "name": "secondary-nav",
+          "selector": [
+            "body > div.cmp-container"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        }
+      ]
     },
     {
       "name": "html-sitemap",
@@ -70,7 +346,45 @@
       ],
       "coverageGaps": [],
       "description": "Sitemap listing page built around an html-sitemap block with supporting text sections",
-      "blocks": []
+      "blocks": [],
+      "sections": [
+        {
+          "id": "rc1",
+          "name": "header",
+          "selector": [
+            ".columncontainer.background-color--primary",
+            "div.columncontainer:first-child"
+          ],
+          "style": "primary",
+          "blocks": [],
+          "defaultContent": [
+            "h1"
+          ]
+        },
+        {
+          "id": "rc2",
+          "name": "sitemap-list",
+          "selector": [
+            ".sitemap__subheading",
+            "ul.sitemap__subheading"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "ul"
+          ]
+        },
+        {
+          "id": "rc3",
+          "name": "secondary-nav",
+          "selector": [
+            "body > div.cmp-container"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        }
+      ]
     },
     {
       "name": "intro-content",
@@ -79,7 +393,33 @@
       ],
       "coverageGaps": [],
       "description": "Introductory page with two default-content sections and no blocks",
-      "blocks": []
+      "blocks": [],
+      "sections": [
+        {
+          "id": "rc1",
+          "name": "content",
+          "selector": [
+            "main > div:first-child",
+            "div.root.responsivegrid"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "h1",
+            "p"
+          ]
+        },
+        {
+          "id": "rc2",
+          "name": "secondary-nav",
+          "selector": [
+            "body > div.cmp-container"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        }
+      ]
     },
     {
       "name": "location-finder",
@@ -88,7 +428,31 @@
       ],
       "coverageGaps": [],
       "description": "Location page featuring a center-locator block in a 2x2 layout with supporting content sections",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "form",
+          "instances": [
+            ".centerlocator"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "s1",
+          "name": "store-locator",
+          "selector": [
+            ".centerlocator"
+          ],
+          "style": null,
+          "blocks": [
+            "form"
+          ],
+          "defaultContent": []
+        }
+      ]
     }
-  ]
+  ],
+  "metadata": {
+    "projectType": "xwalk"
+  }
 }
