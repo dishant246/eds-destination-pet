@@ -1,0 +1,13 @@
+{
+  "sites": {
+    "eds-destination-pet": {
+      "previewOrg": "dishant246",
+      "previewSite": "eds-destination-pet",
+      "contentHostUrl": "author-p10903-e844381.adobeaemcloud.com",
+      "aemSitePath": "/content/eds-destination-pet",
+      "aemAssetsFolderPath": "/content/dam/eds-destination-pet",
+      "aemSiteName": "eds-destination-pet",
+      "aemSiteTitle": "eds-destination-pet"
+    }
+  }
+}
