@@ -1,0 +1,24 @@
+{
+  "variantName": "header",
+  "baseBlock": "header",
+  "canonicalModel": "configuration",
+  "visualCharacteristics": {
+    "colorScheme": "mixed",
+    "complexity": "advanced",
+    "density": "moderate"
+  },
+  "contentPattern": "Site header/navigation, sourced from the nav fragment document rather than an authored block table",
+  "options": [],
+  "memberVariantIds": [
+    "header-global"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.destinationpet.com/",
+        "instanceId": "header-global"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

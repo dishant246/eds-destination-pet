@@ -1,0 +1,30 @@
+{
+  "variantName": "columns-callout",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "structure": "centered single-column callout: line-illustration icon + centered paragraph + centered CTA"
+  },
+  "contentPattern": "Centered promotional callout: an icon, a paragraph, and a centered CTA button grouped as one unit",
+  "options": [],
+  "memberVariantIds": [
+    "columns-callout"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.destinationpet.com/",
+        "instanceId": "columns-callout-1"
+      },
+      {
+        "url": "https://www.destinationpet.com/about-us/destination-pet-foundation/",
+        "documentPath": "/about-us/destination-pet-foundation/index"
+      }
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-09-21T14:04:40.885701Z"
+  }
+}

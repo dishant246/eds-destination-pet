@@ -1,0 +1,85 @@
+/*
+ * Hero Overlay block
+ * Full-bleed background photograph with a large centered white heading
+ * overlaid on top. Values extracted from source .hero.teaser computed styles
+ * (source: https://www.destinationpet.com/).
+ *
+ * Decorated DOM:
+ *   .hero-overlay.block
+ *     > div                        (image row)
+ *         > .hero-overlay-image
+ *             > picture > img
+ *     > .hero-overlay-content      (text row)
+ *         > div > h1
+ */
+
+/* Full-bleed: escape the section's max-width/padding so the photo spans edge to edge */
+.hero-overlay-container .hero-overlay-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-overlay {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 40px 24px;
+  min-height: 600px;          /* source mobile hero ~640px tall */
+}
+
+/* Background photograph — absolutely positioned behind the heading */
+.hero-overlay .hero-overlay-image {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+}
+
+.hero-overlay picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.hero-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+/* Heading overlay */
+.hero-overlay .hero-overlay-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-overlay .hero-overlay-content h1 {
+  margin: 0 0 5px;
+  color: #fff;                /* source h1 color rgb(255,255,255) */
+  font-family: var(--heading-font-family);
+  font-size: 40px;            /* source mobile h1 */
+  font-weight: 400;
+  line-height: 1.1;           /* source 44px / 40px */
+  letter-spacing: normal;
+  text-align: center;
+  text-transform: none;
+}
+
+@media (width >= 900px) {
+  .hero-overlay {
+    padding: 0 24px;          /* source hero padding 0 24px */
+    min-height: 640px;        /* source desktop hero 643px at 1440 wide */
+  }
+
+  .hero-overlay .hero-overlay-content h1 {
+    font-size: 48px;          /* source desktop h1 */
+    line-height: 1.1;         /* source 52.8px / 48px */
+  }
+}

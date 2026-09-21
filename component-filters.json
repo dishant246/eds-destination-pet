@@ -15,13 +15,36 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "form",
+      "hero-overlay",
+      "columns-media",
+      "cards-feature",
+      "columns-callout"
+    ]
+  },
+  {
+    "id": "cards-feature",
+    "components": [
+      "card-feature"
     ]
   },
   {
     "id": "cards",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "columns-callout",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "columns-media",
+    "components": [
+      "column"
     ]
   },
   {

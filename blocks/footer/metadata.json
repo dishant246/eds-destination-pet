@@ -1,0 +1,24 @@
+{
+  "variantName": "footer",
+  "baseBlock": "footer",
+  "canonicalModel": "configuration",
+  "visualCharacteristics": {
+    "colorScheme": "mixed",
+    "complexity": "moderate",
+    "density": "moderate"
+  },
+  "contentPattern": "Site footer, sourced from the footer fragment document rather than an authored block table",
+  "options": [],
+  "memberVariantIds": [
+    "footer-global"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.destinationpet.com/",
+        "instanceId": "footer-global"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

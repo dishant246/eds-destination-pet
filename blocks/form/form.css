@@ -1,0 +1,190 @@
+/*
+ * Form (store-locator) block.
+ * Visual design migrated from https://www.destinationpet.com/our-locations/location/
+ * Source layout: a left search/intro panel beside a full-height map region.
+ * Values (fonts, borders, sizes, colors) come from source computed styles.
+ * The map is rendered as a styled grey placeholder region.
+ */
+
+/* Full-bleed: source row spans the viewport, map flush to the right edge.
+ * The section container sets max-width/padding on .form-wrapper; override it. */
+.form-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Mobile-first: panel stacked above map */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left panel: intro + search + toggle */
+.form .form-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+  padding: 20px 24px;
+}
+
+.form .form-heading {
+  flex: 0 0 100%;
+  margin: 0 0 5px;
+  font-family: var(--heading-font-family);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: rgb(36 36 36);
+}
+
+.form .form-description {
+  flex: 0 0 100%;
+  margin: 0 0 8px;
+}
+
+.form .form-description p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 25.2px;
+  color: rgb(80 80 80);
+}
+
+/* Search field with left magnifier icon */
+.form .form-search {
+  position: relative;
+  flex: 0 1 340px;
+  display: block;
+}
+
+.form .form-search-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.form .form-search-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  padding: 0 30px 0 40px;
+  border: 1px solid rgb(153 153 153);
+  border-radius: 4px;
+  background-color: transparent;
+  color: rgb(54 54 54);
+  font-size: 16px;
+}
+
+.form .form-search-input::placeholder {
+  color: rgb(153 153 153);
+  opacity: 1;
+}
+
+/* Magnifier icon rendered from the input's left padding via a pseudo-element */
+.form .form-search::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  background-color: rgb(54 54 54);
+  mask: no-repeat center / contain
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14"/></svg>');
+  pointer-events: none;
+}
+
+/* Map-view toggle: "Map view" label + switch */
+.form .form-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.form .form-toggle-label {
+  font-size: 14px;
+  color: rgb(54 54 54);
+}
+
+.form .form-toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 51px;
+  height: 31px;
+  flex: 0 0 auto;
+}
+
+.form .form-toggle-switch input {
+  position: absolute;
+  inset: 0;
+  width: 51px;
+  height: 31px;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.form .form-toggle-slider {
+  position: absolute;
+  inset: 0;
+  border-radius: 34px;
+  background-color: rgb(0 0 0);
+  transition: background-color 0.4s;
+  pointer-events: none;
+}
+
+.form .form-toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 3px;
+  left: 3px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: transform 0.4s;
+}
+
+.form .form-toggle-switch input:checked + .form-toggle-slider::before {
+  transform: translateX(20px);
+}
+
+/* Right region: map placeholder — grey block matching map area dimensions */
+.form .form-map {
+  width: 100%;
+  min-height: 360px;
+  background-color: #e7e7e5;
+}
+
+@media (width >= 900px) {
+  .form {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .form .form-panel {
+    flex: 0 0 50%;
+    max-width: 50%;
+    align-content: flex-start;
+    padding: 20px 80px;
+  }
+
+  .form .form-heading {
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+  .form .form-map {
+    flex: 0 0 50%;
+    max-width: 50%;
+    min-height: 700px;
+  }
+}
