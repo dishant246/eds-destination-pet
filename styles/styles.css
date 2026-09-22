@@ -269,10 +269,11 @@ main .section.tertiary {
 }
 
 main .section.primary {
-  background-color: var(--brand-orange);
+  background-color: var(--brand-navy);
   color: #fff;
   margin: 0;
   padding: 40px 0;
+  text-align: center;
 }
 
 main .section.primary h1,

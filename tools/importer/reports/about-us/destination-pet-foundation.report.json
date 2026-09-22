@@ -2,13 +2,13 @@
   "status": "success",
   "url": "https://www.destinationpet.com/about-us/destination-pet-foundation/",
   "path": "about-us/destination-pet-foundation",
-  "timestamp": "2026-09-21T14:24:08.433Z",
+  "timestamp": "2026-09-22T10:57:20.149Z",
   "title": "Destination Pet Foundation - Destination Pet",
   "template": "hero-media-feature",
   "blocks": [
     "hero-overlay",
     "columns-callout",
     "columns-callout",
-    "columns-media"
+    "carousel"
   ]
 }

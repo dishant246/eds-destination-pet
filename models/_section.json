@@ -55,7 +55,8 @@
         "hero-overlay",
         "columns-media",
         "cards-feature",
-        "columns-callout"
+        "columns-callout",
+        "carousel"
       ]
     }
   ]

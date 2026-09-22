@@ -225,9 +225,9 @@
           ]
         },
         {
-          "name": "columns-media",
+          "name": "carousel",
           "instances": [
-            ".mediainfo"
+            ".carousel.panelcontainer"
           ]
         }
       ],
@@ -276,7 +276,7 @@
           ],
           "style": null,
           "blocks": [
-            "columns-media"
+            "carousel"
           ],
           "defaultContent": []
         },
