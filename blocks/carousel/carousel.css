@@ -1,0 +1,54 @@
+/*
+ * Carousel block — image slider with numbered indicators.
+ * One slide visible at a time; numbered buttons below select a slide.
+ * Structural CSS only; brand accent uses the shared tokens.
+ */
+
+.carousel .carousel-slides {
+  position: relative;
+  width: 100%;
+}
+
+.carousel .carousel-slide {
+  display: none;
+  width: 100%;
+}
+
+.carousel .carousel-slide[aria-hidden='false'] {
+  display: block;
+}
+
+.carousel .carousel-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.carousel .carousel-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.carousel .carousel-indicator {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--brand-orange, #e87722);
+  border-radius: 50%;
+  background: none;
+  color: var(--brand-orange, #e87722);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.carousel .carousel-indicator[aria-current='true'],
+.carousel .carousel-indicator:hover {
+  background-color: var(--brand-orange, #e87722);
+  color: #fff;
+}

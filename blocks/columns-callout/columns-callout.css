@@ -1,27 +1,30 @@
 /*
  * Columns Callout block — CSS extracted from source computed styles
- * (https://www.destinationpet.com/ .info-card--center).
+ * (https://www.destinationpet.com/).
  *
- * Centered single-column promotional callout: a line-illustration icon
- * centered at top, a centered paragraph of copy, and a centered solid-orange
- * CTA button. White background.
+ * Two authored variants share this block:
+ *   1. Icon promo (homepage): a centered line-illustration icon, a narrow
+ *      centered paragraph of copy, and a solid-orange CTA button. Decorated
+ *      into `.columns-callout-icon`.
+ *   2. Mission statement (foundation page): a centered navy H1, a larger
+ *      centered tagline paragraph, and a solid-orange CTA button — rendered
+ *      full width. Decorated into `.columns-callout-body`.
  *
- * NOTE: EDS decoration collapses the authored cell into a single
- * `.columns-callout-icon > p` that wraps the <picture>, the copy <p>, and the
- * CTA <p><a>. Selectors below target that decorated structure.
+ * The block gets ~40px top/bottom padding to match the source section spacing.
  */
 
 .columns-callout {
+  padding: 40px 0;
   text-align: center;
 }
 
-/* narrow centered content column (source content width ~411px) */
-.columns-callout > div > div {
+/* --- Icon promo variant (homepage): narrow centered content column --- */
+.columns-callout .columns-callout-icon {
   max-width: 440px;
   margin: 0 auto;
 }
 
-/* icon (handshake / DP line illustration), rendered at natural size */
+/* icon (DP line illustration), rendered at natural size */
 .columns-callout picture {
   display: inline-block;
   margin-bottom: 40px;
@@ -41,7 +44,7 @@
   object-position: center;
 }
 
-/* body copy */
+/* body copy (default 16px — matches the homepage promo paragraph) */
 .columns-callout p {
   margin: 0 0 10px;
   font-size: 16px;
@@ -49,7 +52,23 @@
   color: var(--text-color);
 }
 
-/* CTA — solid orange button with white text */
+/* --- Mission statement variant (foundation): navy heading --- */
+.columns-callout h1 {
+  margin: 0 0 5px;
+  color: var(--brand-navy);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+/* tagline paragraph in the mission variant is larger than the promo copy */
+.columns-callout .columns-callout-body p {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* CTA — solid orange button with white text (both variants) */
 .columns-callout a:any-link {
   display: inline-block;
   margin-top: 30px;
@@ -67,10 +86,4 @@
   background-color: var(--brand-orange-hover);
   color: #fff;
   text-decoration: none;
-}
-
-@media (width >= 900px) {
-  .columns-callout > div > div {
-    padding: 24px 0;
-  }
 }

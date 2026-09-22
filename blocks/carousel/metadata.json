@@ -1,0 +1,17 @@
+{
+  "variantName": "carousel",
+  "baseBlock": "carousel",
+  "canonicalModel": "collection",
+  "visualCharacteristics": {
+    "structure": "image slider, one slide visible at a time, numbered dot indicators below"
+  },
+  "contentPattern": "Repeating image slides with numbered navigation — the 'Our Impact in Action' gallery",
+  "options": [],
+  "memberVariantIds": ["carousel"],
+  "usage": {
+    "pagesUsing": [
+      { "url": "https://www.destinationpet.com/about-us/destination-pet-foundation/" }
+    ],
+    "reuseCount": 1
+  }
+}

@@ -89,26 +89,34 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/columns-media.js
+  // tools/importer/parsers/carousel.js
   function parse3(element, { document }) {
-    const left = element.querySelector(".media-info__left");
-    const right = element.querySelector(".media-info__right");
-    const image = (left || element).querySelector(".cmp-image__image, img");
-    const textNodes = Array.from(
-      (right || element).querySelectorAll(
-        ".media-info__content .cmp-title__text, .media-info__content .cmp-text > p, .media-info__content .cmp-text"
-      )
-    );
-    if (!image && textNodes.length === 0) {
+    const seen = /* @__PURE__ */ new Set();
+    const imgs = [];
+    element.querySelectorAll("img").forEach((img) => {
+      if (img.closest(".slick-cloned")) return;
+      const src = img.getAttribute("src") || "";
+      if (!src) return;
+      let key = src;
+      try {
+        key = new URL(src, "https://x/").pathname;
+      } catch (e) {
+      }
+      if (seen.has(key)) return;
+      seen.add(key);
+      imgs.push(img);
+    });
+    if (imgs.length === 0) {
       element.replaceWith(...element.childNodes);
       return;
     }
-    const leftCell = [];
-    if (image) leftCell.push(image);
-    const rightCell = [];
-    textNodes.forEach((n) => rightCell.push(n));
-    const cells = [[leftCell, rightCell]];
-    const block = WebImporter.Blocks.createBlock(document, { name: "columns-media", cells });
+    const cells = imgs.map((img) => {
+      const imageCell = document.createDocumentFragment();
+      imageCell.appendChild(document.createComment(" field:image "));
+      imageCell.appendChild(img);
+      return [imageCell];
+    });
+    const block = WebImporter.Blocks.createBlock(document, { name: "carousel", cells });
     element.replaceWith(block);
   }
 
@@ -246,7 +254,7 @@ var CustomImportScript = (() => {
   var parsers = {
     "hero-overlay": parse,
     "columns-callout": parse2,
-    "columns-media": parse3
+    "carousel": parse3
   };
   var PAGE_TEMPLATE = {
     "name": "hero-media-feature",
@@ -270,9 +278,9 @@ var CustomImportScript = (() => {
         ]
       },
       {
-        "name": "columns-media",
+        "name": "carousel",
         "instances": [
-          ".mediainfo"
+          ".carousel.panelcontainer"
         ]
       }
     ],
@@ -321,7 +329,7 @@ var CustomImportScript = (() => {
         ],
         "style": null,
         "blocks": [
-          "columns-media"
+          "carousel"
         ],
         "defaultContent": []
       },
@@ -356,9 +364,9 @@ var CustomImportScript = (() => {
   ];
   function executeTransformers(hookName, element, payload) {
     const enhancedPayload = __spreadProps(__spreadValues({}, payload), { template: PAGE_TEMPLATE });
-    transformers.forEach((transformerFn) => {
+    transformers.forEach((fn) => {
       try {
-        transformerFn.call(null, hookName, element, enhancedPayload);
+        fn.call(null, hookName, element, enhancedPayload);
       } catch (e) {
         console.error(`Transformer failed at ${hookName}:`, e);
       }
@@ -369,12 +377,8 @@ var CustomImportScript = (() => {
     (template.blocks || []).forEach((blockDef) => {
       if (blockDef.name.startsWith("section-")) return;
       (blockDef.instances || []).forEach((selector) => {
-        const elements = document.querySelectorAll(selector);
-        if (elements.length === 0) {
-          console.warn(`Block "${blockDef.name}" selector not found: ${selector}`);
-        }
-        elements.forEach((element) => {
-          pageBlocks.push({ name: blockDef.name, selector, element, section: blockDef.section || null });
+        document.querySelectorAll(selector).forEach((element) => {
+          pageBlocks.push({ name: blockDef.name, selector, element });
         });
       });
     });
@@ -407,15 +411,7 @@ var CustomImportScript = (() => {
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
       const rawPath = new URL(params.originalURL).pathname.replace(/\/$/, "").replace(/\.html?$/, "");
       const path = WebImporter.FileUtils.sanitizePath(rawPath === "" ? "/index" : rawPath);
-      return [{
-        element: main,
-        path,
-        report: {
-          title: document.title,
-          template: PAGE_TEMPLATE.name,
-          blocks: pageBlocks.map((b) => b.name)
-        }
-      }];
+      return [{ element: main, path, report: { title: document.title, template: PAGE_TEMPLATE.name, blocks: pageBlocks.map((b) => b.name) } }];
     }
   };
   return __toCommonJS(import_hero_media_feature_exports);

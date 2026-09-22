@@ -117,7 +117,19 @@ var CustomImportScript = (() => {
       cells.push([imageCell, textCell]);
     });
     const block = WebImporter.Blocks.createBlock(document, { name: "cards-feature", cells });
-    element.replaceWith(block);
+    let group = cards[0];
+    while (group.parentElement && group.parentElement !== element && cards.every((c) => group.parentElement.contains(c))) {
+      group = group.parentElement;
+    }
+    if (group && group.parentElement) {
+      group.parentElement.insertBefore(block, group);
+      group.remove();
+      cards.forEach((c) => {
+        if (c.isConnected) c.remove();
+      });
+    } else {
+      element.replaceWith(block);
+    }
   }
 
   // tools/importer/parsers/columns-callout.js

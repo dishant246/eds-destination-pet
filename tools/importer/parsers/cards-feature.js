@@ -7,37 +7,35 @@
  * Each card row has 2 cells:
  *   cell 1 -> image (field:image); imageAlt collapses into <img alt>.
  *   cell 2 -> text (field:text) as richtext: heading(s) + description.
- * An image or text cell may be empty but the cell must still exist.
+ *
+ * IMPORTANT: the source section also contains a section heading (e.g.
+ * "We work together to be...") BEFORE the cards and a CTA link (e.g.
+ * "More about us") AFTER them. Those are default content and must survive.
+ * So we build the block, insert it at the cards' position inside the section,
+ * and remove only the card nodes — leaving the heading and CTA in place.
  */
 export default function parse(element, { document }) {
-  // INPUT EXTRACTION (validated against source.html)
   const cards = Array.from(element.querySelectorAll('.infocards'));
 
-  // Empty-block guard
+  // Empty-block guard: unwrap the element, keep its children.
   if (cards.length === 0) {
     element.replaceWith(...element.childNodes);
     return;
   }
 
   const cells = [];
-
   cards.forEach((card) => {
-    // Image/icon lives in the card asset area.
     const image = card.querySelector('.info-card__asset img, .cmp-image__image, img');
-
-    // Text content: titles (h2/h3) + description richtext.
     const textParts = Array.from(
       card.querySelectorAll('.info-card__text .cmp-title__text, .info-card__text .cmp-text > p'),
     );
 
-    // Cell 1: image (field:image). Empty cell if no image.
     const imageCell = document.createDocumentFragment();
     if (image) {
       imageCell.appendChild(document.createComment(' field:image '));
       imageCell.appendChild(image);
     }
 
-    // Cell 2: text (field:text). Empty cell if no text.
     const textCell = document.createDocumentFragment();
     if (textParts.length) {
       textCell.appendChild(document.createComment(' field:text '));
@@ -48,5 +46,26 @@ export default function parse(element, { document }) {
   });
 
   const block = WebImporter.Blocks.createBlock(document, { name: 'cards-feature', cells });
-  element.replaceWith(block);
+
+  // Determine the cards group's insertion point: the highest ancestor of the
+  // first card that is still a descendant of the section (element) and that
+  // contains every card. Insert the block before it, then remove that group —
+  // preserving the section heading/CTA that live as siblings.
+  let group = cards[0];
+  while (
+    group.parentElement
+    && group.parentElement !== element
+    && cards.every((c) => group.parentElement.contains(c))
+  ) {
+    group = group.parentElement;
+  }
+
+  if (group && group.parentElement) {
+    group.parentElement.insertBefore(block, group);
+    // remove any remaining card nodes not inside the removed group
+    group.remove();
+    cards.forEach((c) => { if (c.isConnected) c.remove(); });
+  } else {
+    element.replaceWith(block);
+  }
 }
